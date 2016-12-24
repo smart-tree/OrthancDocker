@@ -1,7 +1,9 @@
 FROM ubuntu:14.04
 
-MAINTAINER Sebastien Jodogne <s.jodogne@gmail.com>
-LABEL Description="Base environment to build Orthanc" Vendor="Sebastien Jodogne, University Hospital of Liege"
+MAINTAINER Julien von Siebenthal <jsiebenthal@smart-tree.ch>
+
+LABEL io.k8s.display-name="OpenShift Origin Ubuntu Base" \
+      io.k8s.description="This is the base image for Orthanc on Openshift."
 
 USER root
 
