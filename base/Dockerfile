@@ -17,3 +17,5 @@ useradd -u 431 -r -g swuser -d /home/swuser -s /sbin/nologin -c "Docker image us
 chown -R swuser:swuser  /home/swuser
 
 USER swuser 
+
+CMD ["/bin/bash"]
