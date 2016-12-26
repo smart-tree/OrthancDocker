@@ -1,14 +1,15 @@
-FROM ubuntu:14.04
+FROM centos:centos7 
 
 MAINTAINER Julien von Siebenthal <jsiebenthal@smart-tree.ch>
 
-LABEL io.k8s.display-name="OpenShift Origin Ubuntu Base" \
+LABEL io.k8s.display-name="OpenShift Origin Centos Base" \
       io.k8s.description="This is the base image for Orthanc on Openshift."
 
 USER root
 
-RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install wget nano build-essential unzip cmake mercurial uuid-dev libcurl4-openssl-dev liblua5.1-0-dev libgtest-dev libpng-dev libsqlite3-dev libssl-dev libjpeg-dev zlib1g-dev libdcmtk2-dev libboost-all-dev libwrap0-dev libcharls-dev libjsoncpp-dev libpugixml-dev && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN yum -y update; yum clean all
+RUN yum -y install epel-release; yum clean all
+RUN yum -y groupinstall "Development Tools"; yum clean all 
 
 RUN mkdir -p /home/swuser
 
