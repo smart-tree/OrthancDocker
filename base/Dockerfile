@@ -19,4 +19,5 @@ chown -R swuser:swuser  /home/swuser
 
 USER 431 
 
-CMD ["/bin/bash"]
+WORKDIR  /home/swuser
+
